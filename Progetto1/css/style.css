@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.headerBgRed{
+    background-color: red;
+    padding: 10px;
+    width: 100%;
+}
+
+.mainTitle{
+    color: white;
+}
