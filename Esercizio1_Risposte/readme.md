@@ -1,11 +1,12 @@
 1. Che cos'è un algoritmo? Prova a spiegarlo con parole tue, come se lo dovessi spiegare a qualcuno che non ne capisce niente di informatica.
 
-     Un algoritmo è un insieme di processi messo in atto per la risoluzione di un problema. Poniamo caso che il mio problema sia quello di (...). 
+     Un algoritmo è un insieme di processi messo in atto per la risoluzione di un problema. Poniamo caso che io sia un compositore e che il mio problema sia quello di comporre una canzone. Una canzone è strutturata in più fasi - es: strofa, ritornello, bridge - e la produzione di questi passaggi sequenziali può essere vista come l'articolazione di un percorso avente il fine di risolvere il problema che abbiamo posto all'inizio, vale a dire creare un brano musicale coerente e completo. La produzione di una canzone può essere interpretata in questo senso come lo sviluppo di un algoritmo, ovvero come ciò che - dato un input/problema - produce un risultato/output che è la risoluzione del problema d'origine. 
 
 2. Che cos'è una variabile? Prova a spiegarlo con parole tue, come se lo dovessi spiegare a qualcuno che non ne capisce niente di informatica. 
 
-     Una variabile è un contenitore di informazioni. Per esesempio.
+     Una variabile è un contenitore di informazioni. Per fare un'altra analogia, stavolta letteraria, una variabile può corrispondere a un personaggio di un romanzo. Il personaggio è in questo senso descrivibile come un contenitore di informazioni (età, sesso, pregi, difetti etc.), che viene utilizzato per dare senso e corpo allo sviluppo di una storia. Durante l'intreccio, il nostro personaggio - proprio come una variabile, a partire dal suo significato letterale - può crescere e cambiare: oltre ad invecchiare, cambiando così l'informazione "età", può lavorare sui suoi difetti e acquisire nuovi pregi. La variabile-personaggio, infine, ha un nome unico e può essere utilizzata nella storia-programma tutte le volte che lo riteniamo utile e per svolgere diverse funzioni. 
+     
 
 3. Undefined e null sono la stessa cosa?
 
-    Nonostante, undefined e null non corrispondono alla stessa cosa. Ci sono alcune differenze tra i due concetti.
+     Nonostante la vicinanza di significato linguistico tra le due parole, undefined e null non corrispondono alla medesima cosa. Ci sono alcune differenze tra i due concetti. In primo luogo, contrariamente a undefined - che è lo "stato naturale" delle nostre variabili - Null deve essere assegnato manualmente. Tutte le variabili dichiarate ma inutilizzate sono pertanto undefined in partenza, come stato predefinito. Null, invece, come dicevamo, è un valore assegnato manualmente, e nella fattispecie indica l'assenza di un valore o lo svuotamento del nostro contenitore-variabile. Null, infine, può essere considerato come un oggetto, un oggetto che ad esempio vogliamo appositamente indicare come vuoto.  
