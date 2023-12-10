@@ -11,13 +11,29 @@ REGOLE
  Elenca e descrivi i principali datatype in JavaScript. Prova a spiegarli come se volessi farli comprendere a un bambino.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+   /* Nonostante sia un linguaggio di programmazione debolmente tipizzato, Javascript possiede dei datatype.
+   I suoi principali datatype sono 5 e vengono definiti "tipi di dato primitivi"; tra questi ci sono i 
+   numeri, le stringhe i booleani, null e undefined. Javascrip possiede inoltre 
+   un tipo di dato complesso, quello degli oggetti.
+   I numeri, come da parola, sono rappresentati da entità numeriche, come "2", "33,3", e "-50". 
+   Le stringhe sono invece rappresentate dai caratteri, e dunque da tutto ciò che è alfabetico e testuale, 
+   composto da lettere, parole e simboli grammatici.
+   I booleani sono invece dei tipi di dati che restituiscono una condizione vera ("true") o un condizione
+   falsa ("false"). 
+   Undefined e null sono infine due tipi di dato che, rispettivamente, riguardano la condizione
+   predefinita di una variabile (dichiarata ma non ancora assegnata) e l'assegnazione manuale di
+   un valore nullo ad una variabile.
+   */ 
 
 /* ESERCIZIO 2
  Descrivi cos'è un oggetto in JavaScript, con parole tue.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+   /* Un oggetto Javascript è un'entità complessa, non nel senso di complicata, ma nel senso di
+   articolata, che possiede più informazioni. In altre parole, è un'entità a cui vengono assegnate diverse proprietà. 
+   Per esempio: all'entità "casa" possono essere assegnate diverse proprietà, come il numero di stanze,
+   il colore dei muri e il luogo in cui si trova.
+   */ 
 
 /* ESERCIZIO 3
  Scriti il codice necessario ad effettuare un addizione (una somma) dei numeri 12 e 20.
