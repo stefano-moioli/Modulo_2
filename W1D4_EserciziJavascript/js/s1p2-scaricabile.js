@@ -11,7 +11,8 @@ REGOLE
  Elenca e descrivi i principali datatype in JavaScript. Prova a spiegarli come se volessi farli comprendere a un bambino.
 */
 
-   /* Nonostante sia un linguaggio di programmazione debolmente tipizzato, Javascript possiede dei datatype.
+   /* Nonostante sia un linguaggio di programmazione debolmente tipizzato, e dunque non necessita la dichiarazione
+   del tipo di dato nella variabile, Javascript possiede dei datatype.
    I suoi principali datatype sono 5 e vengono definiti "tipi di dato primitivi"; tra questi ci sono i 
    numeri, le stringhe i booleani, null e undefined. Javascrip possiede inoltre 
    un tipo di dato complesso, quello degli oggetti.
