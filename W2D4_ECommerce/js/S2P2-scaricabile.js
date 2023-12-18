@@ -55,7 +55,7 @@ for(i = 0; i < prices.length; i++){
     if(totKart < 100){
       totUser = totKart + shippingCost;
       console.log("Grazie per il tuo acquisto. Con le spese di spedizione andrai a pagare un totale di " + totUser + "$");
-    }else if(totKart >=100){
+    }else{
       totUser = totKart;
       console.log("Grazie per il tuo acquisto. Avendo superato i 100$ di spesa, ti regaliamo le spese di spedizione. Il costo totale è di " + totUser + "$");
     }
