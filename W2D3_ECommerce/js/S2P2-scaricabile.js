@@ -36,4 +36,60 @@ const amy = {
 
 const prices = [34, 5, 2]
 const shippingCost = 50
-let utenteCheEffettuaLAcquisto = amy //cambia il valore qui per provare se il tuo algoritmo funziona!
+let utenteCheEffettuaLAcquisto = marco //cambia il valore qui per provare se il tuo algoritmo funziona!
+
+let totKart = 0;
+let totUser
+
+
+for(i = 0; i < prices.length; i++){
+  totKart += prices[i];
+}
+  if(utenteCheEffettuaLAcquisto.isAmbassador === true){
+    totKart *= 0.70; 
+      console.log("Complimenti, hai ottenuto uno sconto del 30%, il totale del tuo carrello è ora di " + totKart + "$");
+    }else {
+      "Mi dispiace, non hai ottenuto lo sconto del 30%"
+    }
+    
+    if(totKart < 100){
+      totUser = totKart + shippingCost;
+      console.log("Grazie per il tuo acquisto. Con le spese di spedizione andrai a pagare un totale di " + totUser + "$");
+    }else if(totKart >=100){
+      totUser = totKart;
+      console.log("Grazie per il tuo acquisto. Avendo superato i 100$ di spesa, ti regaliamo le spese di spedizione. Il costo totale è di " + totUser + "$");
+    }
+
+    let users = [];
+    let onlyAmbassador = [];
+
+    users.push(marco, paul, amy);
+
+    console.log("Vediamo se il nostro utente è un ambassador");
+
+    users.map(user =>{
+      if(user.isAmbassador){
+        console.log(user.name + " " + user.lastName + " è un ambassador");
+        onlyAmbassador.push(user); // qui pusho l'utente ambassador nell'array a loro riservato
+      }else{
+        console.log(user.name + " " + user.lastName + " non è un ambassador");
+      }
+    })
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
