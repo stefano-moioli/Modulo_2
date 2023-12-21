@@ -45,17 +45,35 @@ console.log(reverseString("Questa frase è palindroma"));
  Scrivi una funzione chiamata "upperFirst", che accetta una stringa come parametro e la ritorna rendendo maiuscola ogni lettera iniziale di ogni parola.
 */
 
-function upperFirst(string){
-    return string.charAt().toUpperCase() + string.slice(1);
+function upperFirst(inputString){
+    let words = inputString.split(' ');
+    let result = words.map(function(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return result.join(' ');
 }
 
-console.log(upperFirst("voglio tutte le iniziali maiuscole"));
+let input = "metti in maiuscolo ogni parola";
+let output = upperFirst(input);
+
+console.log(output);
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n){
+    let randomArray = [];
+    for(i = 0; i < n; i++){
+        let randomNumber = Math.floor(Math.random() * 11);
+        randomArray.push(randomNumber);
+    }
+
+    return randomArray;
+}
+
+let myRandomArray = giveMeRandom(3);
+console.log(myRandomArray);
 
 //EXTRA:
 /* ESERCIZIO 1
@@ -69,7 +87,6 @@ function area(l1, l2){
 
 console.log(area(4, 6));
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 2
  Scrivi una funzione chiamata "crazyDiff" che calcola la differenza assoluta tra un numero fornito e 19.
@@ -92,7 +109,9 @@ console.log(crazyDiff(50));
  La funzione deve aggiungere la parola "code" all'inizio della stringa fornita e ritornare il risultato, ma se la stringa fornita comincia proprio con "code" allora deve ritornarla senza modifiche.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function codify(newString){
+    
+}
 
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
@@ -100,7 +119,15 @@ console.log(crazyDiff(50));
  SUGGERIMENTO: operatore modulo
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function check3and7(newNumber){
+    if(newNumber%3 === 0 || newNumber%7 === 0){
+        return true;
+    }else{
+        return false;
+    } 
+}
+
+console.log(check3and7(28));
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "cutString", che accetta una stringa come parametro e la ritorna senza il primo e l'ultimo carattere.
