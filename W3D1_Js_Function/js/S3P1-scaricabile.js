@@ -53,10 +53,7 @@ function upperFirst(inputString){
     return result.join(' ');
 }
 
-let input = "metti in maiuscolo ogni parola";
-let output = upperFirst(input);
-
-console.log(output);
+console.log(upperFirst("metti in maiuscolo ogni parola"));
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
@@ -72,8 +69,8 @@ function giveMeRandom(n){
     return randomArray;
 }
 
-let myRandomArray = giveMeRandom(3);
-console.log(myRandomArray);
+console.log(giveMeRandom(3));
+
 
 //EXTRA:
 /* ESERCIZIO 1
@@ -110,8 +107,14 @@ console.log(crazyDiff(50));
 */
 
 function codify(newString){
-    
+    if(newString.startsWith("code")){
+        return newString;
+    }else{
+        return "code " + newString;
+    }
 }
+
+console.log(codify("sta bene con 'epic'"));
 
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
@@ -133,4 +136,11 @@ console.log(check3and7(28));
  Scrivi una funzione chiamata "cutString", che accetta una stringa come parametro e la ritorna senza il primo e l'ultimo carattere.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(stringToBeCut){
+return stringToBeCut.split("").slice(1, -1).join("");
+if(stringToBeCut.lenght<=2){
+    return "";
+}
+}
+
+console.log(cutString("cut me please"));
