@@ -23,8 +23,9 @@
 
 const myTitle = document.querySelector("h1");
 const bodyPage = document.querySelector("body");
-const productLink = document.querySelector("a");
+const productLinks = document.querySelectorAll("a");
 const imgProduct = document.querySelector("img");
+const buttonPrice = document.querySelectorAll("button");
 
 function transformTitle(){
     myTitle.textContent = "Bookshop 2.0";
@@ -37,16 +38,27 @@ function transformBgColor(){
 transformBgColor();
 
 function changeAddress(){
-    productLink.href = "www.ebay.com";
+    productLinks.forEach(function(link){
+    link.href = "https://www.ebay.com";
+    })
 }
 changeAddress()
 
 function addCssClasstoA(){
-    productLink.classList.add("linkClass");
+    productLinks.forEach(function(aClass){
+        aClass.classList.add("linkClass");
+    })
 }
 addCssClasstoA();
 
 function addClassVisibleToImg(){
     imgProduct.classList.add("imgClassVisible");
     
+}
+
+function changeColorPrice(){
+  let coloreCasuale = '#' + Math.floor(Math.random()*16777215).toString(16);
+  buttonPrice.forEach(function(colorPrice){
+    colorPrice.style.color = coloreCasuale
+  })
 }
