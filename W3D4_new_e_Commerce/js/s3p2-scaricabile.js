@@ -24,7 +24,7 @@
 const myTitle = document.querySelector("h1");
 const bodyPage = document.querySelector("body");
 const productLinks = document.querySelectorAll("a");
-const imgProduct = document.querySelector("img");
+const imgProducts = document.querySelectorAll("img");
 const buttonPrice = document.querySelectorAll("button");
 
 function transformTitle(){
@@ -51,14 +51,18 @@ function addCssClasstoA(){
 }
 addCssClasstoA();
 
-function addClassVisibleToImg(){
-    imgProduct.classList.add("imgClassVisible");
-    
+function addRemoveClassVisibilityToImg(){
+    imgProducts.forEach(function(imgProduct){
+    imgProduct.classList.toggle("visibility");    
+    })
 }
+
+addRemoveClassVisibilityToImg(); //Chiamando la funzione la prima volta, la classe "visibility" viene aggiunta perché le img non hanno ancora questa classe.
+addRemoveClassVisibilityToImg(); //Chiamando la funzione la seconda volta, la classe "visibility" viene rimossa perché le img, dopo l'iterazione della prima funzione, hanno la classe "visibility".
 
 function changeColorPrice(){
   let coloreCasuale = '#' + Math.floor(Math.random()*16777215).toString(16);
   buttonPrice.forEach(function(colorPrice){
-    colorPrice.style.color = coloreCasuale
+    colorPrice.style.color = coloreCasuale;
   })
 }
