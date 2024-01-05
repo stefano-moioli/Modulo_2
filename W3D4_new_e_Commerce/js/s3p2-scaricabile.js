@@ -61,8 +61,8 @@ addRemoveClassVisibilityToImg(); //Chiamando la funzione la prima volta, la clas
 addRemoveClassVisibilityToImg(); //Chiamando la funzione la seconda volta, la classe "visibility" viene rimossa perché le img, dopo l'iterazione della prima funzione, hanno la classe "visibility".
 
 function changeColorPrice(){
-  let coloreCasuale = '#' + Math.floor(Math.random()*16777215).toString(16);
+  let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
   buttonPrice.forEach(function(colorPrice){
-    colorPrice.style.color = coloreCasuale;
+    colorPrice.style.color = randomColor;
   })
 }
