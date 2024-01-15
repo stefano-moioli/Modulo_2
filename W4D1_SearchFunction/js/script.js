@@ -5,28 +5,36 @@ const resultsContainer = document.createElement("div");
 resultsContainer.setAttribute("id", "resultsContainer");
 document.body.append(resultsContainer);
 
-function searchJobAndLocation(title, location){
+function searchJobAndLocation(title, location) {
     title = title.toLowerCase();
     location = location.toLowerCase();
 
     const results = [];
 
-    if(title !== "" && location !== ""){
-    jobs.forEach(job => {
-        const jobTitle = job.title.toLowerCase();
-        const jobLocation = job.location.toLowerCase();
-        if (jobTitle.includes(title) && jobLocation.includes(location)) {
-            results.push(job);
-        }
-    });
+    if (title !== "" && location !== "") {
+        jobs.forEach(job => {
+            const jobTitle = job.title.toLowerCase();
+            const jobLocation = job.location.toLowerCase();
+            if (jobTitle.includes(title) && jobLocation.includes(location)) {
+                results.push(job);
+            }
+        });
     }
-    return {
-        count: results.length,
-        results
-    };
+
+    if (results.length > 0) {
+        return {
+            count: results.length,
+            results
+        };
+    } else {
+        return {
+            count: 0,
+            message: "We are sorry, we do not have any offer for you at the moment"
+        };
+    }
 }
 
-function search(){
+function search() {
     const title = document.querySelector("#inputJob").value;
     const location = document.querySelector("#inputLocation").value;
 
@@ -34,34 +42,39 @@ function search(){
     return searchResult;
 }
 
-searchButton.addEventListener("click", function(){
+searchButton.addEventListener("click", function () {
     resultsContainer.innerHTML = "";
     showResults(search());
 });
 
-function showResults(searchResults){
-    searchResults.results.forEach(searchItem => {
-        const itemList = document.createElement("li");
-        itemList.innerHTML = `Job:  ${searchItem.title}, Location:  ${searchItem.location}`;
-        resultsContainer.append(itemList);
-    });
+function showResults(searchResults) {
+    if (searchResults.count === 0) {
+        const noResultsMessage = document.createElement("p");
+        noResultsMessage.textContent = searchResults.message;
+        resultsContainer.append(noResultsMessage);
+    } else {
+        searchResults.results.forEach(searchItem => {
+            const itemList = document.createElement("li");
+            itemList.innerHTML = `Job:  ${searchItem.title}, Location:  ${searchItem.location}`;
+            resultsContainer.append(itemList);
+        });
+    }
 }
 
-
-function clearJobField(){
+function clearJobField() {
     inputJob.placeholder = "";
     inputJob.value = "";
 }
 
-function clearLocationField(){
+function clearLocationField() {
     inputLocation.placeholder = "";
     inputLocation.value = "";
 }
 
-inputJob.addEventListener("focus", function(){
+inputJob.addEventListener("focus", function () {
     clearJobField();
-})
+});
 
-inputLocation.addEventListener("focus", function(){
+inputLocation.addEventListener("focus", function () {
     clearLocationField();
-})
+});
