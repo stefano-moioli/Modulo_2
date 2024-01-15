@@ -11,6 +11,8 @@ function searchJobAndLocation(title, location){
 
     const results = [];
 
+
+    if (title.trim() !== "" || location.trim() !== "") {
     jobs.forEach(job => {
         const jobTitle = job.title.toLowerCase();
         const jobLocation = job.location.toLowerCase();
@@ -18,7 +20,7 @@ function searchJobAndLocation(title, location){
             results.push(job);
         }
     });
-
+    }
     return {
         count: results.length,
         results
@@ -28,8 +30,6 @@ function searchJobAndLocation(title, location){
 function search(){
     const title = document.querySelector("#inputJob").value;
     const location = document.querySelector("#inputLocation").value;
-    inputJob.value = "";
-    inputLocation.value = "";
 
     const searchResult = searchJobAndLocation(title, location);
     return searchResult;
@@ -54,11 +54,15 @@ function clearJobField(){
     inputJob.value = "";
 }
 
+function clearLocationField(){
+    inputLocation.placeholder = "";
+    inputLocation.value = "";
+}
+
 inputJob.addEventListener("focus", function(){
     clearJobField();
 })
 
 inputLocation.addEventListener("focus", function(){
-    inputLocation.placeholder = "";
-    inputLocation.value = "";
+    clearLocationField();
 })
