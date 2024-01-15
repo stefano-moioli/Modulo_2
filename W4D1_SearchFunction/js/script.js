@@ -11,8 +11,7 @@ function searchJobAndLocation(title, location){
 
     const results = [];
 
-
-    if (title.trim() !== "" || location.trim() !== "") {
+    if(title !== "" && location !== ""){
     jobs.forEach(job => {
         const jobTitle = job.title.toLowerCase();
         const jobLocation = job.location.toLowerCase();
