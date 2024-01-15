@@ -1,12 +1,17 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
 }
 
 header{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 main{
@@ -14,4 +19,19 @@ main{
     justify-content: center;
     align-items: center;
     color: white;
+    gap: 15px;
+}
+
+#resultsContainer{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+}
+
+#inputJob, #inputLocation, #searchButton{
+    border-radius: 10px;
 }

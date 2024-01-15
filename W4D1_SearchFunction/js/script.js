@@ -2,7 +2,7 @@ const searchButton = document.querySelector("#searchButton");
 const inputJob = document.querySelector("#inputJob");
 const inputLocation = document.querySelector("#inputLocation");
 const resultsContainer = document.createElement("div");
-resultsContainer.setAttribute = ("id", "resultsContainer");
+resultsContainer.setAttribute("id", "resultsContainer");
 document.body.append(resultsContainer);
 
 function searchJobAndLocation(title, location){
@@ -28,6 +28,8 @@ function searchJobAndLocation(title, location){
 function search(){
     const title = document.querySelector("#inputJob").value;
     const location = document.querySelector("#inputLocation").value;
+    inputJob.value = "";
+    inputLocation.value = "";
 
     const searchResult = searchJobAndLocation(title, location);
     return searchResult;
@@ -45,3 +47,18 @@ function showResults(searchResults){
         resultsContainer.append(itemList);
     });
 }
+
+
+function clearJobField(){
+    inputJob.placeholder = "";
+    inputJob.value = "";
+}
+
+inputJob.addEventListener("focus", function(){
+    clearJobField();
+})
+
+inputLocation.addEventListener("focus", function(){
+    inputLocation.placeholder = "";
+    inputLocation.value = "";
+})
