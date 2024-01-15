@@ -63,7 +63,7 @@ const jobs = [
     location: "US, AZ, Phoenix",
   },
   {
-    title: "ASP.net Developer Job opportunity at United States,New Jersey",
+    title: "ASP.net Developer Job opportunity at United States, New Jersey",
     location: "US, NJ, Jersey City",
   },
   {
