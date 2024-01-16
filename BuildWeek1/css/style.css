@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(/BuildWeek1/assets/bg.jpg);
+}
+
+.logoContainer{
+    width: 150px;
+    height: 50px;
+}
+
+.logoContainer img{
+    width: 100%;
+    height: auto;
+}
