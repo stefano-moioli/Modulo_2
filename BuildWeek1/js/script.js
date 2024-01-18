@@ -16,3 +16,4 @@ function getRandomQuestion(arrayOfQuestions){
 const randomQuestion = getRandomQuestion(questions);
 
 console.log(randomQuestion);
+
