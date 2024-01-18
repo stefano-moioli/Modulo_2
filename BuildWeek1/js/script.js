@@ -1,94 +1,120 @@
+//variabili globali
 const body = document.querySelector('body');
 const header = document.createElement('header');
-body.append(header);
 const main = document.createElement('main');
-body.append(main);
-
+const footer = document.createElement('footer')
+body.append(header, main, footer)
 const requests = [];
-
 const answers = [];
+let indiceCorrente = 0;
+let currentQuestion = 1;
+let counter = 0;
+let remainingTime=60;
 
+/* struttura pagina */
 
 //principal function
-function structurePage(){
-    const startButton = document.querySelector('#startButton');
+function structurePage() {
     upSection()
     mainSection()
-
-}structurePage()
+    footerSection()
+} structurePage()
 
 //create up section
-function upSection(){
+function upSection() {
     const figure = document.createElement('figure')
     header.appendChild(figure)
 
     const img = document.createElement('img')
-    img.src='./assets/epicode_logo.png'
+    img.src = './assets/epicode_logo.png'
     figure.appendChild(img)
 
     const timer = document.createElement('div')
     timer.classList.add('timer')
     header.appendChild(timer)
+
+    const seconds = document.createElement('p')
+    seconds.classList.add('second')
+    seconds.textContent='SECONDS'
+
+    let countdown = document.createElement('p')
+    countdown.classList.add('countdown')
+    countdown.textContent=remainingTime
+
+    const remaining = document.createElement('p')
+    remaining.classList.add('remaining')
+    remaining.textContent='REMAINING'
+
+    timer.append(seconds, countdown, remaining)
 }
 
 //create main section
-function mainSection(){
-    const questionTitle = document.createElement('h1')
+function mainSection() {
+    const questionTitle = document.createElement('p')
+    questionTitle.classList.add('questionTitle')
 
-    const containerButton=document.createElement('div')
+    const containerButton = document.createElement('div')
     containerButton.classList.add('containerButton')
 
-    main.append(questionTitle,containerButton)
+    main.append(questionTitle, containerButton)
+}
+//footer
+function footerSection(indiceCorrente){
+    const numberQuestion = document.createElement('p')
+    numberQuestion.classList.add('footer')
+    footer.innerText=''
+    numberQuestion.textContent='QUESTIONS '+indiceCorrente+' / 10'
+    footer.append(numberQuestion)
 }
 
-//function for quiz
-const containerButton = document.querySelector('.containerButton');
-let indiceCorrente = 0; // currentIndex
-
-
+/* logica quiz */
 function structionQuiz() {
     if (indiceCorrente <= questions.length) {
         let itemNow = questions[indiceCorrente]
 
-        const questionTitle = document.querySelector('h1');
+        const questionTitle = document.querySelector('.questionTitle');
         questionTitle.textContent = itemNow.question
 
         const totalRespons = [itemNow.correct_answer, ...itemNow.incorrect_answers]
 
         totalRespons.sort(() => Math.random() - 0.5);
 
+        const containerButton = document.querySelector('.containerButton');
         containerButton.innerHTML = ''
         totalRespons.forEach((element) => {
 
             const button = document.createElement('button')
             button.classList.add('buttonResponse')
+            
             button.textContent = element
             containerButton.append(button)
-
-            button.addEventListener('click', () => {
-                console.log();
-                indiceCorrente++
-                structionQuiz()
-                countPoint()
-            })
         })
+        footerSection(currentQuestion)
+        pressButton()
+        
     } else {
         console.log('ciao');
     }
 } structionQuiz()
 
-let counter = 0
+function pressButton() {
+    const allButton = document.querySelectorAll('button')
+    const correct = questions[indiceCorrente].correct_answer
 
-function countPoint() {
-    const button = document.querySelectorAll('button')
-    const textButton = button.textContent
+    allButton.forEach((e) => {
+        e.addEventListener('click', () => {
+            currentQuestion++;
+            indiceCorrente++;
+            structionQuiz();
 
-    questions.forEach((e) => {
-        const correct = e.correct_answer;
-        if (correct === textButton) {
-            counter++;
-        }
-        console.log(e);
-        console.log("counter is" + counter);
+            if (correct.includes(e.textContent)) {
+                counter++
+                console.log(counter);
+            }
+        })
     })
-}     
+}
+function timer(){
+    remainingTime--
+    document.querySelector('.countdown')==remainingTime
+}timer()
